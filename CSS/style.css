@@ -1,0 +1,103 @@
+@font-face {
+    font-family: nerd;
+    src: url(/Fonts/0xProtoNerdFontMono-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#head {
+    height: 1020px;
+    background-image: url("/Images/ascii-art3.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#me {
+    background-color: #0047FF ;
+    height: 500px;
+}
+
+#work {
+    background-color: #fff8e7;
+    height: 700px;
+}
+
+#contact {
+    height: 100px;
+    background-color: #0047FF
+}
+
+#head table td{
+    padding: 50px;
+    padding-top: 10px;
+    font-family: nerd;
+    color: #6b6d70;
+}
+
+#head table {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+a {
+    text-decoration: none;
+}
+
+#leh1 {
+    margin-top: 230px;
+    margin-left: 5px;
+    font-family: nerd;
+    font-size: 100px;
+    color: #1a49c0;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.cursor {
+    color: #7b7d80;
+    display: inline-block;
+    margin-left: 5px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.lesph {
+    color: #0047FF;
+}
+
+.lesph:hover {
+    background-color: #0047FF;
+    color: #fff8e7;
+}
+
+#me p {
+    border: none;
+    margin: 0;
+    font-family: nerd;
+    padding-left: 350px;
+    padding-top: 120px;
+
+}
+#aboutme {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+
+
+    
