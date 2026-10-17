@@ -22,7 +22,7 @@ body {
 
 #work {
     background-color: #fff8e7;
-    height: 700px;
+    height: 750px;
 }
 
 #contact {
@@ -82,13 +82,14 @@ a {
 .lesph:hover {
     background-color: #0047FF;
     color: #fff8e7;
+    transform:perspective();
 }
 
 #me p {
     border: none;
     margin: 0;
     font-family: nerd;
-    padding-left: 350px;
+    padding-left: 320px;
     padding-top: 120px;
 
 }
@@ -96,6 +97,51 @@ a {
     font-weight: bold;
     font-size: 40px;
 }
+
+#pltable {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    bottom: 200px;
+    right: 410px;
+}
+#pltable td {
+    padding: 10px;
+}
+#pltable td:hover {
+    transform: rotateZ(10deg);
+}
+
+caption {
+    position: relative;
+    bottom: 20px;
+    left: 50px;
+    font-family: nerd;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#work table {
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+
+}
+#work table td{
+    padding: 15px;
+}
+#work img:hover{
+    transform: translateY(-20px);
+}
+#projects {
+    margin-right: 50px;
+}
+
 
 
 
