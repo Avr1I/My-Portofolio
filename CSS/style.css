@@ -172,13 +172,15 @@ caption {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 20px;
+    top: 15px;
 }
 #contact table td {
     margin: 0;
     padding: 8px;
     position: relative;
+    height: 5px;
 }
+
 
 
 
