@@ -2,64 +2,66 @@
     font-family: nerd;
     src: url(/Fonts/0xProtoNerdFontMono-Regular.ttf);
 }
-#me   { scroll-margin-top: 200px; }      
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 html {
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+#me { scroll-margin-top: clamp(60px, 12vh, 200px); }
+
+/* ---------- HEAD ---------- */
 #head {
-    height: 1020px;
+    min-height: 100vh;
+    min-height: 100svh;
     background-image: url("/Images/ascii-art3.png");
     background-size: cover;
     background-position: center;
 }
 
-#me {
-    background-color: #0047FF ;
-    height: 500px;
+#head table,
+#head tbody,
+#head tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
-#work {
-    background-color: #fff8e7;
-    height: 750px;
-}
-
-#contact {
-    height: 100px;
-    background-color: #0047FF
-}
-
-#head table td{
-    padding: 50px;
-    padding-top: 10px;
+#head table td {
+    display: block;
+    padding: 10px clamp(12px, 3.5vw, 50px);
     font-family: nerd;
     color: #6b6d70;
 }
 
-#head table {
-    display: flex;
-    justify-content: right;
-    align-items: right;
-}
-a {
-    text-decoration: none;
-}
-
 #leh1 {
-    margin-top: 230px;
-    margin-left: 5px;
+    margin: clamp(80px, 22vh, 230px) 0 0 5px;
+    padding: 0 10px;
     font-family: nerd;
-    font-size: 100px;
+    font-size: clamp(36px, 9vw, 100px);
     color: #1a49c0;
     display: flex;
-    justify-content: left;
-    align-items: left;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    word-break: break-word;
 }
 
 .cursor {
@@ -68,122 +70,266 @@ a {
     margin-left: 5px;
     font-weight: bold;
     animation: blink 1s infinite;
-    
 }
 
 @keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-.lesph {
-    color: #0047FF;
-}
-
-.lesph:hover {
-    background-color: #0047FF;
-    color: #fff8e7;
-    transform:perspective();
+/* ---------- ME ---------- */
+#me {
+    background-color: #1F3C88;
+    min-height: 500px;
+    padding-bottom: 40px;
 }
 
 #me p {
     border: none;
     margin: 0;
     font-family: nerd;
-    padding-left: 320px;
-    padding-top: 120px;
-
+    padding: clamp(40px, 8vw, 120px) 20px 0 clamp(20px, 22vw, 320px);
 }
+
 #aboutme {
     font-weight: bold;
-    font-size: 40px;
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.lesph {
+    color: #1F3C88;
+}
+
+#pltable,
+#pltable tbody,
+#pltable tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 #pltable {
-    margin: 0;
+    margin: 30px 0 0 clamp(20px, 22vw, 320px);
     padding: 0;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-    position: relative;
-    bottom: 200px;
-    right: 410px;
 }
+
 #pltable td {
+    display: block;
     padding: 10px;
-}
-#pltable td:hover {
-    transform: rotateZ(10deg);
 }
 
 caption {
-    position: relative;
-    bottom: 20px;
-    left: 50px;
+    display: block;
+    width: 100%;
     font-family: nerd;
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: bolder;
+    text-align: left;
+    padding: 0 10px 10px;
+}
+
+/* ---------- WORK ---------- */
+#work {
+    background-color: #F3F0E8;
+    min-height: 750px;
+    padding: 40px 0;
+}
+
+#work table,
+#work tbody,
+#work tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 #work table {
-    position: relative;
-    top: 50px;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-
+    margin-top: 30px;
 }
-#work table td{
+
+#work table td {
+    display: block;
     padding: 15px;
 }
-#work img:hover{
-    transform: translateY(-20px);
-    filter: drop-shadow(0 8px 0 #0047FF); 
-}
-#work img:active{
-    transform: translateY(-15px);
-    filter: brightness(1) drop-shadow(0 1px 0 #002a99);
-}
+
 #projects {
-    margin-right: 50px;
+    margin-right: clamp(0px, 4vw, 50px);
 }
 
 #discover {
-    cursor:pointer;
+    cursor: pointer;
     transition: transform 0.15s ease, filter 0.15s ease;
 }
-#discover:hover {
-    transform: translateY(-4px);              
-    filter: brightness(1.15)                  
-            drop-shadow(0 8px 0 #002a99);    
+
+/* ---------- CONTACT ---------- */
+#contact {
+    min-height: 700px;
+    padding: clamp(40px, 8vw, 80px) 20px;
+    background-color: #1F3C88;
+    font-family: nerd;
+}
+
+#contact-title {
+    margin: 0 0 40px 0;
+    text-align: center;
+    font-family: nerd;
+    font-size: clamp(32px, 7vw, 60px);
+    color: #F3F0E8;
+    word-break: break-word;
+}
+
+#contact-title .cursor {
+    color: #F3F0E8;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+#contact label {
+    font-family: nerd;
+    font-size: 16px;
+    font-weight: bold;
+    color: #F3F0E8;
+    margin-top: 10px;
+}
+
+#contact label::before {
+    content: "> ";
+    color: #6b6d70;
+}
+
+#contact input,
+#contact textarea {
+    width: calc(100% - 5px);        /* laisse la place à l'ombre */
+    font-family: nerd;
+    font-size: 16px;                /* 16px min : évite le zoom auto sur iPhone */
+    padding: 12px;
+    background: #F3F0E8;
+    color: #002a99;
+    border: 2px solid #002a99;
+    border-radius: 0;
+    box-shadow: 5px 5px 0 #002a99;
+    outline: none;
+    resize: vertical;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #6b6d70;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0 #002a99;
+}
+
+#contact button {
+    margin-top: 25px;
+    padding: 14px;
+    font-family: nerd;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: lowercase;
+    background: #F3F0E8;
+    color: #1F3C88;
+    border: 2px solid #002a99;
+    border-radius: 0;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #002a99;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#contact button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #002a99;
+}
+
+/* réseaux */
+#socials,
+#socials tbody,
+#socials tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials {
+    margin: 50px auto 0;
+}
+
+#socials td {
+    display: block;
+    padding: 0 20px;
+}
+
+#socials img {
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+/* ---------- HOVER : seulement sur les appareils qui en ont un ---------- */
+@media (hover: hover) {
+    .lesph:hover {
+        background-color: #1F3C88;
+        color: #F3F0E8;
+    }
+    #pltable td:hover {
+        transform: rotateZ(10deg);
+    }
+    #work img:hover {
+        transform: translateY(-20px);
+        filter: drop-shadow(0 8px 0 #1F3C88);
+    }
+    #discover:hover {
+        transform: translateY(-4px);
+        filter: brightness(1.15) drop-shadow(0 8px 0 #002a99);
+    }
+    #contact button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 0 #002a99;
+    }
+    #socials img:hover {
+        transform: translateY(-10px) rotateZ(10deg);
+        filter: drop-shadow(0 8px 0 #002a99);
+    }
+}
+
+/* ---------- ACTIVE ---------- */
+#work img:active {
+    transform: translateY(-15px);
+    filter: brightness(1) drop-shadow(0 1px 0 #002a99);
 }
 #discover:active {
-    transform: translateY(4px);             
+    transform: translateY(4px);
     filter: brightness(1) drop-shadow(0 1px 0 #002a99);
 }
 
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+    #head table,
+    #head tbody,
+    #head tr,
+    #work table,
+    #work tbody,
+    #work tr {
+        justify-content: center;
+    }
 
-#contact table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 15px;
+    #me p,
+    #pltable {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+
+    #projects {
+        margin-right: 0;
+    }
 }
-#contact table td {
-    margin: 0;
-    padding: 8px;
-    position: relative;
-    height: 5px;
-}
-
-
-
-
-
-
-    
